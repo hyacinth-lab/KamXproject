@@ -1,0 +1,11 @@
+[02-Nov-2024 11:13:11 UTC] PHP Notice:  Undefined variable: conn in /home2/fluxreso/public_html/drops/apple/process_form.php on line 24
+[02-Nov-2024 11:13:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home2/fluxreso/public_html/drops/apple/process_form.php:24
+Stack trace:
+#0 {main}
+  thrown in /home2/fluxreso/public_html/drops/apple/process_form.php on line 24
+[03-Nov-2024 15:07:22 UTC] PHP Parse error:  syntax error, unexpected '$dbname' (T_VARIABLE), expecting ')' in /home2/fluxreso/public_html/drops/apple/db.php on line 9
+[03-Nov-2024 16:12:01 UTC] PHP Notice:  Undefined index: id in /home2/fluxreso/public_html/drops/apple/process_form.php on line 29
+[03-Nov-2024 16:18:25 UTC] PHP Notice:  Undefined index: id in /home2/fluxreso/public_html/drops/apple/process_form.php on line 29
+[03-Nov-2024 16:20:58 UTC] PHP Notice:  Undefined index: id in /home2/fluxreso/public_html/drops/apple/process_form.php on line 29
+[03-Nov-2024 16:34:46 UTC] PHP Notice:  Undefined index: id in /home2/fluxreso/public_html/drops/apple/process_form.php on line 29
+[03-Nov-2024 16:34:48 UTC] PHP Notice:  Undefined index: id in /home2/fluxreso/public_html/drops/apple/process_form.php on line 29

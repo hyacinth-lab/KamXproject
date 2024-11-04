@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <meta name="theme-color" content="#f19e36" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+</head>
+<body class="login-page">
+    
+    <div class="header">
+        <a href="index.php">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="login-page-detail">
+        <h2 id="formTitle">Sign up to save your rank and coins</h2>
+    </div>
+
+    <div class="login-form">
+        <form id="authForm" action="process_form.php" method="POST" onsubmit="document.getElementById('coins').value = localStorage.getItem('coins');">
+            <!-- Name field (only for registration) -->
+            <div id="nameField" style="display: none;">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+
+            <!-- Confirm password field (only for registration) -->
+            <div id="confirmField" style="display: none;">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" name="confirm" id="confirm">
+            </div>
+
+            <!-- Hidden input for coins -->
+            <input type="hidden" name="coins" id="coins">
+        
+            <input class="submit-button" type="submit" value="Submit">
+        </form>
+        
+        <!-- Toggle button to switch between login and registration -->
+        <button id="toggleButton" onclick="toggleForm()">Switch to Register</button>
+    </div>
+
+    <script>
+        let isLogin = true;  // Flag to track form state
+
+        // Function to toggle between login and register forms
+        function toggleForm() {
+            isLogin = !isLogin;  // Toggle the state
+
+            // Toggle form fields and labels
+            document.getElementById('nameField').style.display = isLogin ? 'none' : 'block';
+            document.getElementById('confirmField').style.display = isLogin ? 'none' : 'block';
+            document.getElementById('formTitle').textContent = isLogin ? 'Log in to your account' : 'Sign up to save your rank and coins';
+            document.getElementById('toggleButton').textContent = isLogin ? 'Switch to Register' : 'Switch to Login';
+            document.querySelector('.submit-button').value = isLogin ? 'Login' : 'Register';
+        }
+    </script>
+
+    <script src="./assets/js/charge.js"></script>
+</body>
+</html>
